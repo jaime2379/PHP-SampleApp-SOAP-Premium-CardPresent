@@ -142,6 +142,7 @@ function setBCPTxnData($_serviceInformation) {
 	$transactionData->CurrencyCode = 'USD'; // TypeISOA3 Currency Codes USD CAD
 	$transactionData->SignatureCaptured = Settings::TxnData_SignatureCaptured; // boolean true or false
 	$transactionData->LaneId = "1";
+	$transactionData->Reference = "1";
 	if (isset ( $transactionData->IsPartialShipment ))
 		$transactionData->IsPartialShipment = false; // boolean true or false
 	if (isset ( $transactionData->IsQuasiCash ))
@@ -205,7 +206,7 @@ function setBCPTxnData($_serviceInformation) {
 		} 		/*
 		   * Note: older processors support this way of Soft Descriptors/Alternative Merchant Data the combination of your top level MerchantProfile->MerchantName with MerchantProfile->CustomerServiceInternet combined with the ReportingData->Description will make the soft descriptor format
 		   */
-else {
+		else {
 			$reportingData = new TransactionReportingData ();
 			$reportingData->Description = 'AltMerchName';
 			$transactionData->ReportingData = $reportingData;

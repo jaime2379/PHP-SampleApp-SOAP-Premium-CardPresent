@@ -63,8 +63,16 @@ if (file_exists (ABSPATH.'/ConfigFiles/CWS_Config_Values.xml' )) {
 		$_serviceId = null;
 		$_serviceId['singleService'] = array('ServiceId' => $serviceId, 'ServiceName' => $serviceName);
 	}
-
-
+	$searchNode = $xml->getElementsByTagName( "WorkflowId" );
+	$i = 0;
+	foreach( $searchNode as $srchNode )
+	{
+		$workflowName = $srchNode->getAttribute("workflowName");
+		$workflowId = $xml->getElementsByTagName( "WorkflowId" )->item($i)->nodeValue;
+		$_workflowId[] = array ('ServiceId' => $workflowId, 'WorkflowName' => $workflowName);
+		$i++;
+	}
+	
 	$_applicationProfileId = $xml->getElementsByTagName('ApplicationProfileId')->item(0)->nodeValue;
 	
 	$searchNode = $xml->getElementsByTagName('MerchantProfileId');

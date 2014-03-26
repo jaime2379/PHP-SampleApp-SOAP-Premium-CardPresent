@@ -99,7 +99,7 @@ class transData {
 	$OrderNumber = '',
 	$CustomerPresent = '', // Present, Ecommerce, MOTO, NotPresent
 	$EmployeeId = '', //Used for Retail, Restaurant, MOTO
-	$EntryMode = 'NotSet', // Keyed, TrackDataFromMSR
+	$EntryMode = '', // Keyed, TrackDataFromMSR
 	$GoodsType = '', // DigitalGoods - PhysicalGoods
 	$IndustryType = '', // Retail, Restaurant, Ecommerce, MOTO
 	$AccountType = '', // SavingsAccount, CheckingAccount
@@ -119,7 +119,7 @@ class transDataPro {
 	$OrderNumber = '',
 	$CustomerPresent = '', // Present, Ecommerce, MOTO, NotPresent
 	$EmployeeId = '', //Used for Retail, Restaurant, MOTO
-	$EntryMode = 'NotSet', // Keyed, TrackDataFromMSR
+	$EntryMode = '', // Keyed, TrackDataFromMSR
 	$GoodsType = '', // DigitalGoods - PhysicalGoods
 	$IndustryType = '', // Retail, Restaurant, Ecommerce, MOTO
 	$AccountType = '', // SavingsAccount, CheckingAccount

@@ -1128,8 +1128,117 @@ if (! class_exists ( "CWSValidationErrorFault.EErrorType" )) {
 }
 
 class CWSServiceInformation extends SoapClient {
-	
-	private static $classmap = array ('PingResponse' => 'PingResponse', 'Ping' => 'Ping', 'PingResponse' => 'PingResponse', 'char' => 'char', 'duration' => 'duration', 'guid' => 'guid', 'SignOnWithToken' => 'SignOnWithToken', 'SignOnWithTokenResponse' => 'SignOnWithTokenResponse', 'GetServiceInformation' => 'GetServiceInformation', 'GetServiceInformationResponse' => 'GetServiceInformationResponse', 'ServiceInformation' => 'ServiceInformation', 'BankcardService' => 'BankcardService', 'BankcardServiceAVSData' => 'BankcardServiceAVSData', 'Operations' => 'Operations', 'CloseBatch' => 'CloseBatch', 'PurchaseCardLevel' => 'PurchaseCardLevel', 'Tenders' => 'Tenders', 'PINDebitReturnSupportType' => 'PINDebitReturnSupportType', 'CreditAuthorizeSupportType' => 'CreditAuthorizeSupportType', 'QueryRejectedSupportType' => 'QueryRejectedSupportType', 'PinDebitUndoSupportType' => 'PinDebitUndoSupportType', 'BatchAssignmentSupport' => 'BatchAssignmentSupport', 'CreditReturnSupportType' => 'CreditReturnSupportType', 'TrackDataSupportType' => 'TrackDataSupportType', 'CreditReversalSupportType' => 'CreditReversalSupportType', 'PartialApprovalSupportType' => 'PartialApprovalSupportType', 'ElectronicCheckingService' => 'ElectronicCheckingService', 'StoredValueService' => 'StoredValueService', 'Workflow' => 'Workflow', 'WorkflowService' => 'WorkflowService', 'SaveApplicationData' => 'SaveApplicationData', 'ApplicationData' => 'ApplicationData', 'ApplicationLocation' => 'ApplicationLocation', 'HardwareType' => 'HardwareType', 'PINCapability' => 'PINCapability', 'ReadCapability' => 'ReadCapability', 'EncryptionType' => 'EncryptionType', 'SaveApplicationDataResponse' => 'SaveApplicationDataResponse', 'GetApplicationData' => 'GetApplicationData', 'GetApplicationDataResponse' => 'GetApplicationDataResponse', 'DeleteApplicationData' => 'DeleteApplicationData', 'DeleteApplicationDataResponse' => 'DeleteApplicationDataResponse', 'IsMerchantProfileInitialized' => 'IsMerchantProfileInitialized', 'TenderType' => 'TenderType', 'IsMerchantProfileInitializedResponse' => 'IsMerchantProfileInitializedResponse', 'GetMerchantProfiles' => 'GetMerchantProfiles', 'GetMerchantProfilesResponse' => 'GetMerchantProfilesResponse', 'MerchantProfile' => 'MerchantProfile', 'MerchantProfileMerchantData' => 'MerchantProfileMerchantData', 'TypeISOLanguageCodeA3' => 'TypeISOLanguageCodeA3', 'AddressInfo' => 'AddressInfo', 'TypeStateProvince' => 'TypeStateProvince', 'TypeISOCountryCodeA3' => 'TypeISOCountryCodeA3', 'BankcardMerchantData' => 'BankcardMerchantData', 'IndustryType' => 'IndustryType', 'ElectronicCheckingMerchantData' => 'ElectronicCheckingMerchantData', 'StoredValueMerchantData' => 'StoredValueMerchantData', 'MerchantProfileTransactionData' => 'MerchantProfileTransactionData', 'BankcardTransactionDataDefaults' => 'BankcardTransactionDataDefaults', 'TypeISOCurrencyCodeA3' => 'TypeISOCurrencyCodeA3', 'CustomerPresent' => 'CustomerPresent', 'EntryMode' => 'EntryMode', 'RequestACI' => 'RequestACI', 'RequestAdvice' => 'RequestAdvice', 'GetMerchantProfileIds' => 'GetMerchantProfileIds', 'GetMerchantProfileIdsResponse' => 'GetMerchantProfileIdsResponse', 'GetMerchantProfilesByProfileId' => 'GetMerchantProfilesByProfileId', 'GetMerchantProfilesByProfileIdResponse' => 'GetMerchantProfilesByProfileIdResponse', 'GetMerchantProfile' => 'GetMerchantProfile', 'GetMerchantProfileResponse' => 'GetMerchantProfileResponse', 'DeleteMerchantProfile' => 'DeleteMerchantProfile', 'DeleteMerchantProfileResponse' => 'DeleteMerchantProfileResponse', 'SaveMerchantProfiles' => 'SaveMerchantProfiles', 'SaveMerchantProfilesResponse' => 'SaveMerchantProfilesResponse', 'SignOnWithUsernamePasswordForServiceKey' => 'SignOnWithUsernamePasswordForServiceKey', 'SignOnWithUsernamePasswordForServiceKeyResponse' => 'SignOnWithUsernamePasswordForServiceKeyResponse', 'ResetPasswordForServiceKey' => 'ResetPasswordForServiceKey', 'ResetPasswordForServiceKeyResponse' => 'ResetPasswordForServiceKeyResponse', 'ChangePasswordForServiceKey' => 'ChangePasswordForServiceKey', 'ChangePasswordForServiceKeyResponse' => 'ChangePasswordForServiceKeyResponse', 'ChangeUsernameForServiceKey' => 'ChangeUsernameForServiceKey', 'ChangeUsernameForServiceKeyResponse' => 'ChangeUsernameForServiceKeyResponse', 'ChangeEmailForServiceKey' => 'ChangeEmailForServiceKey', 'ChangeEmailForServiceKeyResponse' => 'ChangeEmailForServiceKeyResponse', 'GetPasswordExpirationForServiceKey' => 'GetPasswordExpirationForServiceKey', 'GetPasswordExpirationForServiceKeyResponse' => 'GetPasswordExpirationForServiceKeyResponse', 'ValidateMerchantProfile' => 'ValidateMerchantProfile', 'ValidateMerchantProfileResponse' => 'ValidateMerchantProfileResponse', 'STSUnavailableFault' => 'STSUnavailableFault', 'BaseFault' => 'BaseFault', 'ExpiredTokenFault' => 'ExpiredTokenFault', 'InvalidTokenFault' => 'InvalidTokenFault', 'AuthenticationFault' => 'AuthenticationFault', 'BadAttemptThresholdExceededFault' => 'BadAttemptThresholdExceededFault', 'PasswordExpiredFault' => 'PasswordExpiredFault', 'OneTimePasswordFault' => 'OneTimePasswordFault', 'LockedByAdminFault' => 'LockedByAdminFault', 'SendEmailFault' => 'SendEmailFault', 'GeneratePasswordFault' => 'GeneratePasswordFault', 'PasswordInvalidFault' => 'PasswordInvalidFault', 'UserNotFoundFault' => 'UserNotFoundFault', 'InvalidEmailFault' => 'InvalidEmailFault', 'CWSFault' => 'CWSFault', 'CWSBaseFault' => 'CWSBaseFault', 'CWSServiceInformationUnavailableFault' => 'CWSServiceInformationUnavailableFault', 'CWSValidationResultFault' => 'CWSValidationResultFault', 'CWSValidationErrorFault' => 'CWSValidationErrorFault', 'CWSValidationErrorFault.EErrorType' => 'CWSValidationErrorFault.EErrorType' );
+
+ private static $classmap = array( 
+                                    'PingResponse' => 'PingResponse',
+                                    'Ping' => 'Ping',
+                                    'PingResponse' => 'PingResponse',
+                                    'char' => 'char',
+                                    'duration' => 'duration',
+                                    'guid' => 'guid',
+                                    'SignOnWithToken' => 'SignOnWithToken',
+                                    'SignOnWithTokenResponse' => 'SignOnWithTokenResponse',
+                                    'GetServiceInformation' => 'GetServiceInformation',
+                                    'GetServiceInformationResponse' => 'GetServiceInformationResponse',
+                                    'ServiceInformation' => 'ServiceInformation',
+                                    'BankcardService' => 'BankcardService',
+                                    'BankcardServiceAVSData' => 'BankcardServiceAVSData',
+                                    'Operations' => 'Operations',
+                                    'CloseBatch' => 'CloseBatch',
+                                    'PurchaseCardLevel' => 'PurchaseCardLevel',
+                                    'Tenders' => 'Tenders',
+                                    'PINDebitReturnSupportType' => 'PINDebitReturnSupportType',
+                                    'CreditAuthorizeSupportType' => 'CreditAuthorizeSupportType',
+                                    'QueryRejectedSupportType' => 'QueryRejectedSupportType',
+                                    'PinDebitUndoSupportType' => 'PinDebitUndoSupportType',
+                                    'BatchAssignmentSupport' => 'BatchAssignmentSupport',
+                                    'CreditReturnSupportType' => 'CreditReturnSupportType',
+                                    'TrackDataSupportType' => 'TrackDataSupportType',
+                                    'CreditReversalSupportType' => 'CreditReversalSupportType',
+                                    'PartialApprovalSupportType' => 'PartialApprovalSupportType',
+                                    'ElectronicCheckingService' => 'ElectronicCheckingService',
+                                    'StoredValueService' => 'StoredValueService',
+                                    'Workflow' => 'Workflow',
+                                    'WorkflowService' => 'WorkflowService',
+                                    'SaveApplicationData' => 'SaveApplicationData',
+                                    'ApplicationData' => 'ApplicationData',
+                                    'ApplicationLocation' => 'ApplicationLocation',
+                                    'HardwareType' => 'HardwareType',
+                                    'PINCapability' => 'PINCapability',
+                                    'ReadCapability' => 'ReadCapability',
+                                    'EncryptionType' => 'EncryptionType',
+                                    'SaveApplicationDataResponse' => 'SaveApplicationDataResponse',
+                                    'GetApplicationData' => 'GetApplicationData',
+                                    'GetApplicationDataResponse' => 'GetApplicationDataResponse',
+                                    'DeleteApplicationData' => 'DeleteApplicationData',
+                                    'DeleteApplicationDataResponse' => 'DeleteApplicationDataResponse',
+                                    'IsMerchantProfileInitialized' => 'IsMerchantProfileInitialized',
+                                    'TenderType' => 'TenderType',
+                                    'IsMerchantProfileInitializedResponse' => 'IsMerchantProfileInitializedResponse',
+                                    'GetMerchantProfiles' => 'GetMerchantProfiles',
+                                    'GetMerchantProfilesResponse' => 'GetMerchantProfilesResponse',
+                                    'MerchantProfile' => 'MerchantProfile',
+                                    'MerchantProfileMerchantData' => 'MerchantProfileMerchantData',
+                                    'TypeISOLanguageCodeA3' => 'TypeISOLanguageCodeA3',
+                                    'AddressInfo' => 'AddressInfo',
+                                    'TypeStateProvince' => 'TypeStateProvince',
+                                    'TypeISOCountryCodeA3' => 'TypeISOCountryCodeA3',
+                                    'BankcardMerchantData' => 'BankcardMerchantData',
+                                    'IndustryType' => 'IndustryType',
+                                    'ElectronicCheckingMerchantData' => 'ElectronicCheckingMerchantData',
+                                    'StoredValueMerchantData' => 'StoredValueMerchantData',
+                                    'MerchantProfileTransactionData' => 'MerchantProfileTransactionData',
+                                    'BankcardTransactionDataDefaults' => 'BankcardTransactionDataDefaults',
+                                    'TypeISOCurrencyCodeA3' => 'TypeISOCurrencyCodeA3',
+                                    'CustomerPresent' => 'CustomerPresent',
+                                    'EntryMode' => 'EntryMode',
+                                    'RequestACI' => 'RequestACI',
+                                    'RequestAdvice' => 'RequestAdvice',
+                                    'GetMerchantProfileIds' => 'GetMerchantProfileIds',
+                                    'GetMerchantProfileIdsResponse' => 'GetMerchantProfileIdsResponse',
+                                    'GetMerchantProfilesByProfileId' => 'GetMerchantProfilesByProfileId',
+                                    'GetMerchantProfilesByProfileIdResponse' => 'GetMerchantProfilesByProfileIdResponse',
+                                    'GetMerchantProfile' => 'GetMerchantProfile',
+                                    'GetMerchantProfileResponse' => 'GetMerchantProfileResponse',
+                                    'DeleteMerchantProfile' => 'DeleteMerchantProfile',
+                                    'DeleteMerchantProfileResponse' => 'DeleteMerchantProfileResponse',
+                                    'SaveMerchantProfiles' => 'SaveMerchantProfiles',
+                                    'SaveMerchantProfilesResponse' => 'SaveMerchantProfilesResponse',
+                                    'SignOnWithUsernamePasswordForServiceKey' => 'SignOnWithUsernamePasswordForServiceKey',
+                                    'SignOnWithUsernamePasswordForServiceKeyResponse' => 'SignOnWithUsernamePasswordForServiceKeyResponse',
+                                    'ResetPasswordForServiceKey' => 'ResetPasswordForServiceKey',
+                                    'ResetPasswordForServiceKeyResponse' => 'ResetPasswordForServiceKeyResponse',
+                                    'ChangePasswordForServiceKey' => 'ChangePasswordForServiceKey',
+                                    'ChangePasswordForServiceKeyResponse' => 'ChangePasswordForServiceKeyResponse',
+                                    'ChangeUsernameForServiceKey' => 'ChangeUsernameForServiceKey',
+                                    'ChangeUsernameForServiceKeyResponse' => 'ChangeUsernameForServiceKeyResponse',
+                                    'ChangeEmailForServiceKey' => 'ChangeEmailForServiceKey',
+                                    'ChangeEmailForServiceKeyResponse' => 'ChangeEmailForServiceKeyResponse',
+                                    'GetPasswordExpirationForServiceKey' => 'GetPasswordExpirationForServiceKey',
+                                    'GetPasswordExpirationForServiceKeyResponse' => 'GetPasswordExpirationForServiceKeyResponse',
+                                    'ValidateMerchantProfile' => 'ValidateMerchantProfile',
+                                    'ValidateMerchantProfileResponse' => 'ValidateMerchantProfileResponse',
+                                    'STSUnavailableFault' => 'STSUnavailableFault',
+                                    'BaseFault' => 'BaseFault',
+                                    'ExpiredTokenFault' => 'ExpiredTokenFault',
+                                    'InvalidTokenFault' => 'InvalidTokenFault',
+                                    'AuthenticationFault' => 'AuthenticationFault',
+                                    'BadAttemptThresholdExceededFault' => 'BadAttemptThresholdExceededFault',
+                                    'PasswordExpiredFault' => 'PasswordExpiredFault',
+                                    'OneTimePasswordFault' => 'OneTimePasswordFault',
+                                    'LockedByAdminFault' => 'LockedByAdminFault',
+                                    'SendEmailFault' => 'SendEmailFault',
+                                    'GeneratePasswordFault' => 'GeneratePasswordFault',
+                                    'PasswordInvalidFault' => 'PasswordInvalidFault',
+                                    'UserNotFoundFault' => 'UserNotFoundFault',
+                                    'InvalidEmailFault' => 'InvalidEmailFault',
+                                    'CWSFault' => 'CWSFault',
+                                    'CWSBaseFault' => 'CWSBaseFault',
+                                    'CWSServiceInformationUnavailableFault' => 'CWSServiceInformationUnavailableFault',
+                                    'CWSValidationResultFault' => 'CWSValidationResultFault',
+                                    'CWSValidationErrorFault' => 'CWSValidationErrorFault',
+                                    'CWSValidationErrorFault.EErrorType' => 'CWSValidationErrorFault.EErrorType',
+                                   );
 	
 	public function CWSServiceInformation($wsdl = "", $options = array()) {
 		foreach ( self::$classmap as $key => $value ) {
@@ -1146,11 +1255,15 @@ class CWSServiceInformation extends SoapClient {
    * @param Ping $parameters
    * @return PingResponse
    */
-	public function Ping(Ping $parameters) {
-		return $this->__soapCall ( 'Ping', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Ping(Ping $parameters) {
+    return $this->__soapCall('Ping', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Sign on using an identity token.
  
 				Identity token associated with your service key
@@ -1160,11 +1273,15 @@ class CWSServiceInformation extends SoapClient {
    * @param SignOnWithToken $parameters
    * @return SignOnWithTokenResponse
    */
-	public function SignOnWithToken(SignOnWithToken $parameters) {
-		return $this->__soapCall ( 'SignOnWithToken', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function SignOnWithToken(SignOnWithToken $parameters) {
+    return $this->__soapCall('SignOnWithToken', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieve service information.
  
 				Session token
@@ -1174,11 +1291,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetServiceInformation $parameters
    * @return GetServiceInformationResponse
    */
-	public function GetServiceInformation(GetServiceInformation $parameters) {
-		return $this->__soapCall ( 'GetServiceInformation', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetServiceInformation(GetServiceInformation $parameters) {
+    return $this->__soapCall('GetServiceInformation', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Save application configuration data.
  
 				Session token
@@ -1189,11 +1310,15 @@ class CWSServiceInformation extends SoapClient {
    * @param SaveApplicationData $parameters
    * @return SaveApplicationDataResponse
    */
-	public function SaveApplicationData(SaveApplicationData $parameters) {
-		return $this->__soapCall ( 'SaveApplicationData', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function SaveApplicationData(SaveApplicationData $parameters) {
+    return $this->__soapCall('SaveApplicationData', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieves all current application configuration data associated with the Service Key.
  
    * 
@@ -1205,11 +1330,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetApplicationData $parameters
    * @return GetApplicationDataResponse
    */
-	public function GetApplicationData(GetApplicationData $parameters) {
-		return $this->__soapCall ( 'GetApplicationData', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetApplicationData(GetApplicationData $parameters) {
+    return $this->__soapCall('GetApplicationData', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Deletes application configuration data.
  
 				Session token
@@ -1219,11 +1348,15 @@ class CWSServiceInformation extends SoapClient {
    * @param DeleteApplicationData $parameters
    * @return DeleteApplicationDataResponse
    */
-	public function DeleteApplicationData(DeleteApplicationData $parameters) {
-		return $this->__soapCall ( 'DeleteApplicationData', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function DeleteApplicationData(DeleteApplicationData $parameters) {
+    return $this->__soapCall('DeleteApplicationData', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Tests whether merchant profile is initialized for a specific Tender Type.
  
 				Session 
@@ -1238,11 +1371,15 @@ class CWSServiceInformation extends SoapClient {
    * @param IsMerchantProfileInitialized $parameters
    * @return IsMerchantProfileInitializedResponse
    */
-	public function IsMerchantProfileInitialized(IsMerchantProfileInitialized $parameters) {
-		return $this->__soapCall ( 'IsMerchantProfileInitialized', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function IsMerchantProfileInitialized(IsMerchantProfileInitialized $parameters) {
+    return $this->__soapCall('IsMerchantProfileInitialized', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieves all merchant profiles associated with a specific Service ID and Tender Type.
  
    * 
@@ -1255,11 +1392,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetMerchantProfiles $parameters
    * @return GetMerchantProfilesResponse
    */
-	public function GetMerchantProfiles(GetMerchantProfiles $parameters) {
-		return $this->__soapCall ( 'GetMerchantProfiles', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetMerchantProfiles(GetMerchantProfiles $parameters) {
+    return $this->__soapCall('GetMerchantProfiles', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieves all merchant profile IDs associated with a specific Service ID and Tender Type.
  
    * 
@@ -1272,11 +1413,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetMerchantProfileIds $parameters
    * @return GetMerchantProfileIdsResponse
    */
-	public function GetMerchantProfileIds(GetMerchantProfileIds $parameters) {
-		return $this->__soapCall ( 'GetMerchantProfileIds', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetMerchantProfileIds(GetMerchantProfileIds $parameters) {
+    return $this->__soapCall('GetMerchantProfileIds', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieves a specific merchant's merchant profiles for all Service IDs and Tender Types.
  
    * 
@@ -1287,11 +1432,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetMerchantProfilesByProfileId $parameters
    * @return GetMerchantProfilesByProfileIdResponse
    */
-	public function GetMerchantProfilesByProfileId(GetMerchantProfilesByProfileId $parameters) {
-		return $this->__soapCall ( 'GetMerchantProfilesByProfileId', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetMerchantProfilesByProfileId(GetMerchantProfilesByProfileId $parameters) {
+    return $this->__soapCall('GetMerchantProfilesByProfileId', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Retrieves the merchant profile associated with a specific Service ID and Tender Type.
  
    * 
@@ -1305,11 +1454,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetMerchantProfile $parameters
    * @return GetMerchantProfileResponse
    */
-	public function GetMerchantProfile(GetMerchantProfile $parameters) {
-		return $this->__soapCall ( 'GetMerchantProfile', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetMerchantProfile(GetMerchantProfile $parameters) {
+    return $this->__soapCall('GetMerchantProfile', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Deletes a specific merchant profile for a Tender Type.
  
 				Session token
@@ -1321,11 +1474,15 @@ class CWSServiceInformation extends SoapClient {
    * @param DeleteMerchantProfile $parameters
    * @return DeleteMerchantProfileResponse
    */
-	public function DeleteMerchantProfile(DeleteMerchantProfile $parameters) {
-		return $this->__soapCall ( 'DeleteMerchantProfile', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function DeleteMerchantProfile(DeleteMerchantProfile $parameters) {
+    return $this->__soapCall('DeleteMerchantProfile', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Saves one or more merchant profiles for a Tender Type.
  
 				Session token
@@ -1337,11 +1494,15 @@ class CWSServiceInformation extends SoapClient {
    * @param SaveMerchantProfiles $parameters
    * @return SaveMerchantProfilesResponse
    */
-	public function SaveMerchantProfiles(SaveMerchantProfiles $parameters) {
-		return $this->__soapCall ( 'SaveMerchantProfiles', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function SaveMerchantProfiles(SaveMerchantProfiles $parameters) {
+    return $this->__soapCall('SaveMerchantProfiles', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Sign on using a username and password.
  
 				Service key to sign on
@@ -1354,11 +1515,15 @@ class CWSServiceInformation extends SoapClient {
    * @param SignOnWithUsernamePasswordForServiceKey $parameters
    * @return SignOnWithUsernamePasswordForServiceKeyResponse
    */
-	public function SignOnWithUsernamePasswordForServiceKey(SignOnWithUsernamePasswordForServiceKey $parameters) {
-		return $this->__soapCall ( 'SignOnWithUsernamePasswordForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function SignOnWithUsernamePasswordForServiceKey(SignOnWithUsernamePasswordForServiceKey $parameters) {
+    return $this->__soapCall('SignOnWithUsernamePasswordForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Reset the password for the specified service key and username.
  
 				Service key
@@ -1368,11 +1533,15 @@ class CWSServiceInformation extends SoapClient {
    * @param ResetPasswordForServiceKey $parameters
    * @return ResetPasswordForServiceKeyResponse
    */
-	public function ResetPasswordForServiceKey(ResetPasswordForServiceKey $parameters) {
-		return $this->__soapCall ( 'ResetPasswordForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ResetPasswordForServiceKey(ResetPasswordForServiceKey $parameters) {
+    return $this->__soapCall('ResetPasswordForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Change the password for the specified service key and username.
  
 				Service key
@@ -1386,11 +1555,15 @@ class CWSServiceInformation extends SoapClient {
    * @param ChangePasswordForServiceKey $parameters
    * @return ChangePasswordForServiceKeyResponse
    */
-	public function ChangePasswordForServiceKey(ChangePasswordForServiceKey $parameters) {
-		return $this->__soapCall ( 'ChangePasswordForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ChangePasswordForServiceKey(ChangePasswordForServiceKey $parameters) {
+    return $this->__soapCall('ChangePasswordForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Change the username for the specified service key and username.
  
 				Service key
@@ -1403,11 +1576,15 @@ class CWSServiceInformation extends SoapClient {
    * @param ChangeUsernameForServiceKey $parameters
    * @return ChangeUsernameForServiceKeyResponse
    */
-	public function ChangeUsernameForServiceKey(ChangeUsernameForServiceKey $parameters) {
-		return $this->__soapCall ( 'ChangeUsernameForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ChangeUsernameForServiceKey(ChangeUsernameForServiceKey $parameters) {
+    return $this->__soapCall('ChangeUsernameForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Change the email address for the specified service key and username.
  
 				Service key
@@ -1420,11 +1597,15 @@ class CWSServiceInformation extends SoapClient {
    * @param ChangeEmailForServiceKey $parameters
    * @return ChangeEmailForServiceKeyResponse
    */
-	public function ChangeEmailForServiceKey(ChangeEmailForServiceKey $parameters) {
-		return $this->__soapCall ( 'ChangeEmailForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ChangeEmailForServiceKey(ChangeEmailForServiceKey $parameters) {
+    return $this->__soapCall('ChangeEmailForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Change the username for the specified service key and username.
  
 				Service key
@@ -1436,11 +1617,15 @@ class CWSServiceInformation extends SoapClient {
    * @param GetPasswordExpirationForServiceKey $parameters
    * @return GetPasswordExpirationForServiceKeyResponse
    */
-	public function GetPasswordExpirationForServiceKey(GetPasswordExpirationForServiceKey $parameters) {
-		return $this->__soapCall ( 'GetPasswordExpirationForServiceKey', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function GetPasswordExpirationForServiceKey(GetPasswordExpirationForServiceKey $parameters) {
+    return $this->__soapCall('GetPasswordExpirationForServiceKey', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Validates a provided merchant proifile. If the profile is invalid, the operation will 
    * throw a 
  CWSValidationResultFault containing the details of the exception. If your application 
@@ -1459,9 +1644,13 @@ class CWSServiceInformation extends SoapClient {
    * @param ValidateMerchantProfile $parameters
    * @return ValidateMerchantProfileResponse
    */
-	public function ValidateMerchantProfile(ValidateMerchantProfile $parameters) {
-		return $this->__soapCall ( 'ValidateMerchantProfile', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation', 'soapaction' => '' ) );
-	}
+  public function ValidateMerchantProfile(ValidateMerchantProfile $parameters) {
+    return $this->__soapCall('ValidateMerchantProfile', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/ServiceInformation',
+            'soapaction' => ''
+           )
+      );
+  }
 
 }
 

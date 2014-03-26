@@ -434,7 +434,7 @@ if (! class_exists ( "CVResult" )) {
 }
 
 if (! class_exists ( "Undo" )) {
-	/*f
+
  *Undo
  */
 	class Undo {
@@ -1682,7 +1682,7 @@ if (! class_exists ( "ReturnByIdResponse" )) {
 	}
 }
 if (! class_exists ( "BCPUndo" )) {
-	/*
+/*
  *Undo
  */
 	class BCPUndo {
@@ -1703,7 +1703,7 @@ if (! class_exists ( "UndoResponse" )) {
 }
 
 if (! class_exists ( "Capture" )) {
-	/*
+/*
  *Capture
  */
 	class Capture {
@@ -2174,29 +2174,238 @@ if (! class_exists ( "CWSInvalidServiceInformationFault" )) {
 }
 
 class CwsTransactionProcessing extends SoapClient {
-	
-	private static $classmap = array ('PingResponse' => 'PingResponse', 'Ping' => 'Ping', 'PingResponse' => 'PingResponse', 'char' => 'char', 'duration' => 'duration', 'guid' => 'guid', 'TransactionData' => 'TransactionData', 'TypeISOCurrencyCodeA3' => 'TypeISOCurrencyCodeA3', 'Transaction' => 'Transaction', 'TransactionCustomerData' => 'TransactionCustomerData', 'CustomerInfo' => 'CustomerInfo', 'NameInfo' => 'NameInfo', 'AddressInfo' => 'AddressInfo', 'TypeISOCountryCodeA3' => 'TypeISOCountryCodeA3', 'PersonalInfo' => 'PersonalInfo', 'DriversLicense' => 'DriversLicense', 'TypeStateProvince' => 'TypeStateProvince', 'TransactionReportingData' => 'TransactionReportingData', 'Addendum' => 'Addendum', 'Unmanaged' => 'Unmanaged', 'TransactionTenderData' => 'TransactionTenderData', 'CVDataProvided' => 'CVDataProvided', 'IndustryType' => 'IndustryType', 'EntryMode' => 'EntryMode', 'AlternativeMerchantData' => 'AlternativeMerchantData', 'PINlessDebitData' => 'PINlessDebitData', 'BillPayServiceData' => 'BillPayServiceData', 'PayeeData' => 'PayeeData', 'Manage' => 'Manage', 'Return' => 'Return', 'Response' => 'Response', 'Status' => 'Status', 'ServiceTransactionDateTime' => 'ServiceTransactionDateTime', 'CaptureState' => 'CaptureState', 'TransactionState' => 'TransactionState', 'SummaryData' => 'SummaryData', 'SummaryTotals' => 'SummaryTotals', 'CVResult' => 'CVResult', 'Undo' => 'Undo', 'Capture' => 'Capture', 'Adjust' => 'Adjust', 'BankcardTransactionData' => 'BankcardTransactionData', 'BankcardTransaction' => 'BankcardTransaction', 'BillPayment' => 'BillPayment', 'RequestCommercialCard' => 'RequestCommercialCard', 'ExistingDebt' => 'ExistingDebt', 'RequestACI' => 'RequestACI', 'RequestAdvice' => 'RequestAdvice', 'BankcardTenderData' => 'BankcardTenderData', 'CardData' => 'CardData', 'TypeCardType' => 'TypeCardType', 'CardSecurityData' => 'CardSecurityData', 'AVSData' => 'AVSData', 'EcommerceSecurityData' => 'EcommerceSecurityData', 'TokenIndicator' => 'TokenIndicator', 'BankcardApplicationConfigurationData' => 'BankcardApplicationConfigurationData', 'ApplicationLocation' => 'ApplicationLocation', 'HardwareType' => 'HardwareType', 'PINCapability' => 'PINCapability', 'ReadCapability' => 'ReadCapability', 'AccountType' => 'AccountType', 'CustomerPresent' => 'CustomerPresent', 'GoodsType' => 'GoodsType', 'InternetTransactionData' => 'InternetTransactionData', 'PartialApprovalSupportType' => 'PartialApprovalSupportType', 'TransactionCode' => 'TransactionCode', 'ManagedBilling' => 'ManagedBilling', 'ManagedBillingInstallments' => 'ManagedBillingInstallments', 'Interval' => 'Interval', 'Level2Data' => 'Level2Data', 'TaxExempt' => 'TaxExempt', 'IsTaxExempt' => 'IsTaxExempt', 'Tax' => 'Tax', 'ItemizedTax' => 'ItemizedTax', 'TypeTaxType' => 'TypeTaxType', 'LineItemDetail' => 'LineItemDetail', 'TypeUnitOfMeasure' => 'TypeUnitOfMeasure', 'IIASData' => 'IIASData', 'IIASDesignation' => 'IIASDesignation', 'BankcardReturn' => 'BankcardReturn', 'BankcardTransactionResponse' => 'BankcardTransactionResponse', 'AdviceResponse' => 'AdviceResponse', 'CommercialCardResponse' => 'CommercialCardResponse', 'BankcardCaptureResponse' => 'BankcardCaptureResponse', 'TransactionSummaryData' => 'TransactionSummaryData', 'Totals' => 'Totals', 'PrepaidCard' => 'PrepaidCard', 'AVSResult' => 'AVSResult', 'AddressResult' => 'AddressResult', 'CountryResult' => 'CountryResult', 'StateResult' => 'StateResult', 'PostalCodeResult' => 'PostalCodeResult', 'PhoneResult' => 'PhoneResult', 'CardholderNameResult' => 'CardholderNameResult', 'CityResult' => 'CityResult', 'Resubmit' => 'Resubmit', 'BankcardUndo' => 'BankcardUndo', 'PINDebitUndoReason' => 'PINDebitUndoReason', 'BankcardCapture' => 'BankcardCapture', 'ChargeType' => 'ChargeType', 'BankcardTransactionDataPro' => 'BankcardTransactionDataPro', 'BankcardTransactionPro' => 'BankcardTransactionPro', 'BankcardInterchangeData' => 'BankcardInterchangeData', 'BankcardTransactionResponsePro' => 'BankcardTransactionResponsePro', 'BankcardReturnPro' => 'BankcardReturnPro', 'BankcardCapturePro' => 'BankcardCapturePro', 'BankcardCaptureResponsePro' => 'BankcardCaptureResponsePro', 'ElectronicCheckingTransactionData' => 'ElectronicCheckingTransactionData', 'SECCode' => 'SECCode', 'ServiceType' => 'ServiceType', 'TransactionType' => 'TransactionType', 'ElectronicCheckingCustomerData' => 'ElectronicCheckingCustomerData', 'ElectronicCheckingTenderData' => 'ElectronicCheckingTenderData', 'CheckData' => 'CheckData', 'CheckCountryCode' => 'CheckCountryCode', 'OwnerType' => 'OwnerType', 'UseType' => 'UseType', 'ElectronicCheckingTransaction' => 'ElectronicCheckingTransaction', 'ElectronicCheckingTransactionResponse' => 'ElectronicCheckingTransactionResponse', 'ReturnInformation' => 'ReturnInformation', 'ElectronicCheckingCaptureResponse' => 'ElectronicCheckingCaptureResponse', 'StoredValueTransaction' => 'StoredValueTransaction', 'StoredValueTenderData' => 'StoredValueTenderData', 'CardData' => 'CardData', 'CardSecurityData' => 'CardSecurityData', 'ConsumerIdentification' => 'ConsumerIdentification', 'IdType' => 'IdType', 'IdEntryMode' => 'IdEntryMode', 'StoredValueTransactionData' => 'StoredValueTransactionData', 'CardStatus' => 'CardStatus', 'OperationType' => 'OperationType', 'StoredValueBalanceTransferTenderData' => 'StoredValueBalanceTransferTenderData', 'StoredValueActivateTenderData' => 'StoredValueActivateTenderData', 'VirtualCardData' => 'VirtualCardData', 'StoredValueManage' => 'StoredValueManage', 'StoredValueReturn' => 'StoredValueReturn', 'StoredValueCapture' => 'StoredValueCapture', 'StoredValueTransactionResponse' => 'StoredValueTransactionResponse', 'StoredValueCaptureResponse' => 'StoredValueCaptureResponse', 'QueryAccount' => 'QueryAccount', 'QueryAccountResponse' => 'QueryAccountResponse', 'Verify' => 'Verify', 'VerifyResponse' => 'VerifyResponse', 'Authorize' => 'Authorize', 'AuthorizeResponse' => 'AuthorizeResponse', 'Adjust' => 'Adjust', 'AdjustResponse' => 'AdjustResponse', 'AuthorizeAndCapture' => 'AuthorizeAndCapture', 'AuthorizeAndCaptureResponse' => 'AuthorizeAndCaptureResponse', 'ReturnUnlinked' => 'ReturnUnlinked', 'ReturnUnlinkedResponse' => 'ReturnUnlinkedResponse', 'ReturnById' => 'ReturnById', 'ReturnByIdResponse' => 'ReturnByIdResponse', 'UndoDifferenceData' => 'Undo', 'UndoResponse' => 'UndoResponse', 'Capture' => 'Capture', 'CaptureResponse' => 'CaptureResponse', 'CaptureAll' => 'CaptureAll', 'CaptureAllResponse' => 'CaptureAllResponse', 'CaptureAllAsync' => 'CaptureAllAsync', 'CaptureAllAsyncResponse' => 'CaptureAllAsyncResponse', 'CaptureSelective' => 'CaptureSelective', 'CaptureSelectiveResponse' => 'CaptureSelectiveResponse', 'CaptureSelectiveAsync' => 'CaptureSelectiveAsync', 'CaptureSelectiveAsyncResponse' => 'CaptureSelectiveAsyncResponse', 'Acknowledge' => 'Acknowledge', 'AcknowledgeResponse' => 'AcknowledgeResponse', 'RequestTransaction' => 'RequestTransaction', 'RequestTransactionResponse' => 'RequestTransactionResponse', 'ManageAccount' => 'ManageAccount', 'ManageAccountResponse' => 'ManageAccountResponse', 'ManageAccountById' => 'ManageAccountById', 'ManageAccountByIdResponse' => 'ManageAccountByIdResponse', 'Disburse' => 'Disburse', 'DisburseResponse' => 'DisburseResponse', 'STSUnavailableFault' => 'STSUnavailableFault', 'BaseFault' => 'BaseFault', 'ExpiredTokenFault' => 'ExpiredTokenFault', 'InvalidTokenFault' => 'InvalidTokenFault', 'AuthenticationFault' => 'AuthenticationFault', 'BadAttemptThresholdExceededFault' => 'BadAttemptThresholdExceededFault', 'PasswordExpiredFault' => 'PasswordExpiredFault', 'OneTimePasswordFault' => 'OneTimePasswordFault', 'LockedByAdminFault' => 'LockedByAdminFault', 'SendEmailFault' => 'SendEmailFault', 'GeneratePasswordFault' => 'GeneratePasswordFault', 'PasswordInvalidFault' => 'PasswordInvalidFault', 'UserNotFoundFault' => 'UserNotFoundFault', 'InvalidEmailFault' => 'InvalidEmailFault', 'CWSConnectionFault' => 'CWSConnectionFault', 'CWSBaseFault' => 'CWSBaseFault', 'CWSTransactionServiceUnavailableFault' => 'CWSTransactionServiceUnavailableFault', 'CWSTransactionAlreadySettledFault' => 'CWSTransactionAlreadySettledFault', 'CWSValidationResultFault' => 'CWSValidationResultFault', 'CWSValidationErrorFault' => 'CWSValidationErrorFault', 'CWSValidationErrorFault.EErrorType' => 'CWSValidationErrorFault.EErrorType', 'CWSFault' => 'CWSFault', 'CWSTransactionFailedFault' => 'CWSTransactionFailedFault', 'CWSExtendedDataNotSupportedFault' => 'CWSExtendedDataNotSupportedFault', 'CWSInvalidMessageFormatFault' => 'CWSInvalidMessageFormatFault', 'CWSOperationNotSupportedFault' => 'CWSOperationNotSupportedFault', 'CWSInvalidOperationFault' => 'CWSInvalidOperationFault', 'CWSDeserializationFault' => 'CWSDeserializationFault', 'CWSInvalidServiceInformationFault' => 'CWSInvalidServiceInformationFault' );
-	
-	public function CwsTransactionProcessing($wsdl = "", $options = array()) {
-		foreach ( self::$classmap as $key => $value ) {
-			if (! isset ( $options ['classmap'] [$key] )) {
-				$options ['classmap'] [$key] = $value;
-			}
-		}
-		parent::__construct ( $wsdl, $options );
-	}
-	
-	/*
+
+ private static $classmap = array( 
+                                    'PingResponse' => 'PingResponse',
+                                    'Ping' => 'Ping',
+                                    'PingResponse' => 'PingResponse',
+                                    'char' => 'char',
+                                    'duration' => 'duration',
+                                    'guid' => 'guid',
+                                    'TransactionData' => 'TransactionData',
+                                    'TypeISOCurrencyCodeA3' => 'TypeISOCurrencyCodeA3',
+                                    'Transaction' => 'Transaction',
+                                    'TransactionCustomerData' => 'TransactionCustomerData',
+                                    'CustomerInfo' => 'CustomerInfo',
+                                    'NameInfo' => 'NameInfo',
+                                    'AddressInfo' => 'AddressInfo',
+                                    'TypeISOCountryCodeA3' => 'TypeISOCountryCodeA3',
+                                    'PersonalInfo' => 'PersonalInfo',
+                                    'DriversLicense' => 'DriversLicense',
+                                    'TypeStateProvince' => 'TypeStateProvince',
+                                    'TransactionReportingData' => 'TransactionReportingData',
+                                    'Addendum' => 'Addendum',
+                                    'Unmanaged' => 'Unmanaged',
+                                    'TransactionTenderData' => 'TransactionTenderData',
+                                    'CVDataProvided' => 'CVDataProvided',
+                                    'IndustryType' => 'IndustryType',
+                                    'EntryMode' => 'EntryMode',
+                                    'AlternativeMerchantData' => 'AlternativeMerchantData',
+                                    'PINlessDebitData' => 'PINlessDebitData',
+                                    'BillPayServiceData' => 'BillPayServiceData',
+                                    'PayeeData' => 'PayeeData',
+                                    'Manage' => 'Manage',
+                                    'Return' => 'Return',
+                                    'Response' => 'Response',
+                                    'Status' => 'Status',
+                                    'ServiceTransactionDateTime' => 'ServiceTransactionDateTime',
+                                    'CaptureState' => 'CaptureState',
+                                    'TransactionState' => 'TransactionState',
+                                    'SummaryData' => 'SummaryData',
+                                    'SummaryTotals' => 'SummaryTotals',
+                                    'CVResult' => 'CVResult',
+                                    'Undo' => 'Undo',
+                                    'Capture' => 'Capture',
+                                    'Adjust' => 'Adjust',
+                                    'BankcardTransactionData' => 'BankcardTransactionData',
+                                    'BankcardTransaction' => 'BankcardTransaction',
+                                    'BillPayment' => 'BillPayment',
+                                    'RequestCommercialCard' => 'RequestCommercialCard',
+                                    'ExistingDebt' => 'ExistingDebt',
+                                    'RequestACI' => 'RequestACI',
+                                    'RequestAdvice' => 'RequestAdvice',
+                                    'BankcardTenderData' => 'BankcardTenderData',
+                                    'CardData' => 'CardData',
+                                    'TypeCardType' => 'TypeCardType',
+                                    'CardSecurityData' => 'CardSecurityData',
+                                    'AVSData' => 'AVSData',
+                                    'EcommerceSecurityData' => 'EcommerceSecurityData',
+                                    'TokenIndicator' => 'TokenIndicator',
+                                    'BankcardApplicationConfigurationData' => 'BankcardApplicationConfigurationData',
+                                    'ApplicationLocation' => 'ApplicationLocation',
+                                    'HardwareType' => 'HardwareType',
+                                    'PINCapability' => 'PINCapability',
+                                    'ReadCapability' => 'ReadCapability',
+                                    'AccountType' => 'AccountType',
+                                    'CustomerPresent' => 'CustomerPresent',
+                                    'GoodsType' => 'GoodsType',
+                                    'InternetTransactionData' => 'InternetTransactionData',
+                                    'PartialApprovalSupportType' => 'PartialApprovalSupportType',
+                                    'TransactionCode' => 'TransactionCode',
+                                    'ManagedBilling' => 'ManagedBilling',
+                                    'ManagedBillingInstallments' => 'ManagedBillingInstallments',
+                                    'Interval' => 'Interval',
+                                    'Level2Data' => 'Level2Data',
+                                    'TaxExempt' => 'TaxExempt',
+                                    'IsTaxExempt' => 'IsTaxExempt',
+                                    'Tax' => 'Tax',
+                                    'ItemizedTax' => 'ItemizedTax',
+                                    'TypeTaxType' => 'TypeTaxType',
+                                    'LineItemDetail' => 'LineItemDetail',
+                                    'TypeUnitOfMeasure' => 'TypeUnitOfMeasure',
+                                    'IIASData' => 'IIASData',
+                                    'IIASDesignation' => 'IIASDesignation',
+                                    'BankcardReturn' => 'BankcardReturn',
+                                    'BankcardTransactionResponse' => 'BankcardTransactionResponse',
+                                    'AdviceResponse' => 'AdviceResponse',
+                                    'CommercialCardResponse' => 'CommercialCardResponse',
+                                    'BankcardCaptureResponse' => 'BankcardCaptureResponse',
+                                    'TransactionSummaryData' => 'TransactionSummaryData',
+                                    'Totals' => 'Totals',
+                                    'PrepaidCard' => 'PrepaidCard',
+                                    'AVSResult' => 'AVSResult',
+                                    'AddressResult' => 'AddressResult',
+                                    'CountryResult' => 'CountryResult',
+                                    'StateResult' => 'StateResult',
+                                    'PostalCodeResult' => 'PostalCodeResult',
+                                    'PhoneResult' => 'PhoneResult',
+                                    'CardholderNameResult' => 'CardholderNameResult',
+                                    'CityResult' => 'CityResult',
+                                    'Resubmit' => 'Resubmit',
+                                    'BankcardUndo' => 'BankcardUndo',
+                                    'PINDebitUndoReason' => 'PINDebitUndoReason',
+                                    'BankcardCapture' => 'BankcardCapture',
+                                    'ChargeType' => 'ChargeType',
+                                    'BankcardTransactionDataPro' => 'BankcardTransactionDataPro',
+                                    'BankcardTransactionPro' => 'BankcardTransactionPro',
+                                    'BankcardInterchangeData' => 'BankcardInterchangeData',
+                                    'BankcardTransactionResponsePro' => 'BankcardTransactionResponsePro',
+                                    'BankcardReturnPro' => 'BankcardReturnPro',
+                                    'BankcardCapturePro' => 'BankcardCapturePro',
+                                    'BankcardCaptureResponsePro' => 'BankcardCaptureResponsePro',
+                                    'ElectronicCheckingTransactionData' => 'ElectronicCheckingTransactionData',
+                                    'SECCode' => 'SECCode',
+                                    'ServiceType' => 'ServiceType',
+                                    'TransactionType' => 'TransactionType',
+                                    'ElectronicCheckingCustomerData' => 'ElectronicCheckingCustomerData',
+                                    'ElectronicCheckingTenderData' => 'ElectronicCheckingTenderData',
+                                    'CheckData' => 'CheckData',
+                                    'CheckCountryCode' => 'CheckCountryCode',
+                                    'OwnerType' => 'OwnerType',
+                                    'UseType' => 'UseType',
+                                    'ElectronicCheckingTransaction' => 'ElectronicCheckingTransaction',
+                                    'ElectronicCheckingTransactionResponse' => 'ElectronicCheckingTransactionResponse',
+                                    'ReturnInformation' => 'ReturnInformation',
+                                    'ElectronicCheckingCaptureResponse' => 'ElectronicCheckingCaptureResponse',
+                                    'StoredValueTransaction' => 'StoredValueTransaction',
+                                    'StoredValueTenderData' => 'StoredValueTenderData',
+                                    'CardData' => 'CardData',
+                                    'CardSecurityData' => 'CardSecurityData',
+                                    'ConsumerIdentification' => 'ConsumerIdentification',
+                                    'IdType' => 'IdType',
+                                    'IdEntryMode' => 'IdEntryMode',
+                                    'StoredValueTransactionData' => 'StoredValueTransactionData',
+                                    'CardStatus' => 'CardStatus',
+                                    'OperationType' => 'OperationType',
+                                    'StoredValueBalanceTransferTenderData' => 'StoredValueBalanceTransferTenderData',
+                                    'StoredValueActivateTenderData' => 'StoredValueActivateTenderData',
+                                    'VirtualCardData' => 'VirtualCardData',
+                                    'StoredValueManage' => 'StoredValueManage',
+                                    'StoredValueReturn' => 'StoredValueReturn',
+                                    'StoredValueCapture' => 'StoredValueCapture',
+                                    'StoredValueTransactionResponse' => 'StoredValueTransactionResponse',
+                                    'StoredValueCaptureResponse' => 'StoredValueCaptureResponse',
+                                    'QueryAccount' => 'QueryAccount',
+                                    'QueryAccountResponse' => 'QueryAccountResponse',
+                                    'Verify' => 'Verify',
+                                    'VerifyResponse' => 'VerifyResponse',
+                                    'Authorize' => 'Authorize',
+                                    'AuthorizeResponse' => 'AuthorizeResponse',
+                                    'Adjust' => 'Adjust',
+                                    'AdjustResponse' => 'AdjustResponse',
+                                    'AuthorizeAndCapture' => 'AuthorizeAndCapture',
+                                    'AuthorizeAndCaptureResponse' => 'AuthorizeAndCaptureResponse',
+                                    'ReturnUnlinked' => 'ReturnUnlinked',
+                                    'ReturnUnlinkedResponse' => 'ReturnUnlinkedResponse',
+                                    'ReturnById' => 'ReturnById',
+                                    'ReturnByIdResponse' => 'ReturnByIdResponse',
+                                    'Undo' => 'Undo',
+                                    'UndoResponse' => 'UndoResponse',
+                                    'Capture' => 'Capture',
+                                    'CaptureResponse' => 'CaptureResponse',
+                                    'CaptureAll' => 'CaptureAll',
+                                    'CaptureAllResponse' => 'CaptureAllResponse',
+                                    'CaptureAllAsync' => 'CaptureAllAsync',
+                                    'CaptureAllAsyncResponse' => 'CaptureAllAsyncResponse',
+                                    'CaptureSelective' => 'CaptureSelective',
+                                    'CaptureSelectiveResponse' => 'CaptureSelectiveResponse',
+                                    'CaptureSelectiveAsync' => 'CaptureSelectiveAsync',
+                                    'CaptureSelectiveAsyncResponse' => 'CaptureSelectiveAsyncResponse',
+                                    'Acknowledge' => 'Acknowledge',
+                                    'AcknowledgeResponse' => 'AcknowledgeResponse',
+                                    'RequestTransaction' => 'RequestTransaction',
+                                    'RequestTransactionResponse' => 'RequestTransactionResponse',
+                                    'ManageAccount' => 'ManageAccount',
+                                    'ManageAccountResponse' => 'ManageAccountResponse',
+                                    'ManageAccountById' => 'ManageAccountById',
+                                    'ManageAccountByIdResponse' => 'ManageAccountByIdResponse',
+                                    'Disburse' => 'Disburse',
+                                    'DisburseResponse' => 'DisburseResponse',
+                                    'STSUnavailableFault' => 'STSUnavailableFault',
+                                    'BaseFault' => 'BaseFault',
+                                    'ExpiredTokenFault' => 'ExpiredTokenFault',
+                                    'InvalidTokenFault' => 'InvalidTokenFault',
+                                    'AuthenticationFault' => 'AuthenticationFault',
+                                    'BadAttemptThresholdExceededFault' => 'BadAttemptThresholdExceededFault',
+                                    'PasswordExpiredFault' => 'PasswordExpiredFault',
+                                    'OneTimePasswordFault' => 'OneTimePasswordFault',
+                                    'LockedByAdminFault' => 'LockedByAdminFault',
+                                    'SendEmailFault' => 'SendEmailFault',
+                                    'GeneratePasswordFault' => 'GeneratePasswordFault',
+                                    'PasswordInvalidFault' => 'PasswordInvalidFault',
+                                    'UserNotFoundFault' => 'UserNotFoundFault',
+                                    'InvalidEmailFault' => 'InvalidEmailFault',
+                                    'CWSConnectionFault' => 'CWSConnectionFault',
+                                    'CWSBaseFault' => 'CWSBaseFault',
+                                    'CWSTransactionServiceUnavailableFault' => 'CWSTransactionServiceUnavailableFault',
+                                    'CWSTransactionAlreadySettledFault' => 'CWSTransactionAlreadySettledFault',
+                                    'CWSValidationResultFault' => 'CWSValidationResultFault',
+                                    'CWSValidationErrorFault' => 'CWSValidationErrorFault',
+                                    'CWSValidationErrorFault.EErrorType' => 'CWSValidationErrorFault.EErrorType',
+                                    'CWSFault' => 'CWSFault',
+                                    'CWSTransactionFailedFault' => 'CWSTransactionFailedFault',
+                                    'CWSExtendedDataNotSupportedFault' => 'CWSExtendedDataNotSupportedFault',
+                                    'CWSInvalidMessageFormatFault' => 'CWSInvalidMessageFormatFault',
+                                    'CWSOperationNotSupportedFault' => 'CWSOperationNotSupportedFault',
+                                    'CWSInvalidOperationFault' => 'CWSInvalidOperationFault',
+                                    'CWSDeserializationFault' => 'CWSDeserializationFault',
+                                    'CWSInvalidServiceInformationFault' => 'CWSInvalidServiceInformationFault',
+                                   );
+
+  public function CwsTransactionProcessing($wsdl = "", $options = array()) {
+    foreach(self::$classmap as $key => $value) {
+      if(!isset($options['classmap'][$key])) {
+        $options['classmap'][$key] = $value;
+      }
+    }
+    parent::__construct($wsdl, $options);
+  }
+
+  /*
    *  
    *
    * @param Ping $parameters
    * @return PingResponse
    */
-	public function Ping(Ping $parameters) {
-		return $this->__soapCall ( 'Ping', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Ping(Ping $parameters) {
+    return $this->__soapCall('Ping', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs a balance inquiry on the cardholder's account to determine the current account 
    * balance. 
 				Session token obtained from SignOn()
@@ -2210,11 +2419,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param QueryAccount $parameters
    * @return QueryAccountResponse
    */
-	public function QueryAccount(QueryAccount $parameters) {
-		return $this->__soapCall ( 'QueryAccount', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function QueryAccount(QueryAccount $parameters) {
+    return $this->__soapCall('QueryAccount', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs a check on the cardholder's account without reserving any funds. 
 				Session 
    * token obtained from SignOn()
@@ -2227,11 +2440,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Verify $parameters
    * @return VerifyResponse
    */
-	public function Verify(Verify $parameters) {
-		return $this->__soapCall ( 'Verify', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Verify(Verify $parameters) {
+    return $this->__soapCall('Verify', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs a check on cardholder's funds and reserves the queried amount if sufficient funds 
    * are available. Transaction must be captured before funds transfer will occur. 
 				Session 
@@ -2245,11 +2462,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Authorize $parameters
    * @return AuthorizeResponse
    */
-	public function Authorize(Authorize $parameters) {
-		return $this->__soapCall ( 'Authorize', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Authorize(Authorize $parameters) {
+    return $this->__soapCall('Authorize', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs an incremental or reversal authorization to increase or decrease the amount of 
    * an existing authorization. 
 				Session token obtained from SignOn()
@@ -2261,11 +2482,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Adjust $parameters
    * @return AdjustResponse
    */
-	public function Adjust(Adjust $parameters) {
-		return $this->__soapCall ( 'Adjust', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Adjust(Adjust $parameters) {
+    return $this->__soapCall('Adjust', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs a check on cardholder's funds and reserves the queried amount if sufficient funds 
    * are available, then marks the transaction for capture. 
 				Session token obtained from 
@@ -2279,11 +2504,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param AuthorizeAndCapture $parameters
    * @return AuthorizeAndCaptureResponse
    */
-	public function AuthorizeAndCapture(AuthorizeAndCapture $parameters) {
-		return $this->__soapCall ( 'AuthorizeAndCapture', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function AuthorizeAndCapture(AuthorizeAndCapture $parameters) {
+    return $this->__soapCall('AuthorizeAndCapture', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs an unlinked or 'standalone' credit to a cardholder's account from a merchant's 
    * account. 
 				Session token obtained from SignOn()
@@ -2297,11 +2526,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param ReturnUnlinked $parameters
    * @return ReturnUnlinkedResponse
    */
-	public function ReturnUnlinked(ReturnUnlinked $parameters) {
-		return $this->__soapCall ( 'ReturnUnlinked', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ReturnUnlinked(ReturnUnlinked $parameters) {
+    return $this->__soapCall('ReturnUnlinked', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Performs a linked credit to a cardholder's account from a merchant's account using data 
    * from the authorization. 
 				Session token obtained from SignOn()
@@ -2313,11 +2546,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param ReturnById $parameters
    * @return ReturnByIdResponse
    */
-	public function ReturnById(ReturnById $parameters) {
-		return $this->__soapCall ( 'ReturnById', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ReturnById(ReturnById $parameters) {
+    return $this->__soapCall('ReturnById', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Void or reverse an authorization in order to release cardholder funds. If transaction 
    * to be Undone is in an ErrorUnknown state, the TenderData must be set on the BankcardUndo. 
    * 
@@ -2330,11 +2567,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Undo $parameters
    * @return UndoResponse
    */
-	public function Undo(BCPUndo $parameters) {
-		return $this->__soapCall ( 'Undo', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Undo(Undo $parameters) {
+    return $this->__soapCall('Undo', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark a succesfully authorized transaction for settlement by the processor. 
 				Session 
    * token obtained from SignOn()
@@ -2345,12 +2586,16 @@ class CwsTransactionProcessing extends SoapClient {
    *
    * @param Capture $parameters
    * @return CaptureResponse
-	 */
-	public function Capture(CaptureAuth $parameters) {
-		return $this->__soapCall ( 'Capture', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+   */
+  public function Capture(Capture $parameters) {
+    return $this->__soapCall('Capture', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark all succesfully authorized transactions for settlement by the processor. 
 				Session 
    * token obtained from SignOn()
@@ -2365,11 +2610,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param CaptureAll $parameters
    * @return CaptureAllResponse
    */
-	public function CaptureAll(CaptureAll $parameters) {
-		return $this->__soapCall ( 'CaptureAll', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function CaptureAll(CaptureAll $parameters) {
+    return $this->__soapCall('CaptureAll', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark all succesfully authorized transactions for settlement by the processor without waiting 
    * for the settlement to complete. The Response object will indicate a successful receipt 
    * of the settlement request. 
@@ -2386,11 +2635,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param CaptureAllAsync $parameters
    * @return CaptureAllAsyncResponse
    */
-	public function CaptureAllAsync(CaptureAllAsync $parameters) {
-		return $this->__soapCall ( 'CaptureAllAsync', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function CaptureAllAsync(CaptureAllAsync $parameters) {
+    return $this->__soapCall('CaptureAllAsync', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark one or more specific succesfully authorized transactions for settlement by the processor. 
    * 
 				Session token obtained from SignOn()
@@ -2403,11 +2656,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param CaptureSelective $parameters
    * @return CaptureSelectiveResponse
    */
-	public function CaptureSelective(CaptureSelective $parameters) {
-		return $this->__soapCall ( 'CaptureSelective', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function CaptureSelective(CaptureSelective $parameters) {
+    return $this->__soapCall('CaptureSelective', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark one or more specific succesfully authorized transactions for settlement by the processor 
    * without waiting for the settlement to complete. The Response object will indicate a successful 
    * receipt of the settlement request. 
@@ -2423,11 +2680,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param CaptureSelectiveAsync $parameters
    * @return CaptureSelectiveAsyncResponse
    */
-	public function CaptureSelectiveAsync(CaptureSelectiveAsync $parameters) {
-		return $this->__soapCall ( 'CaptureSelectiveAsync', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function CaptureSelectiveAsync(CaptureSelectiveAsync $parameters) {
+    return $this->__soapCall('CaptureSelectiveAsync', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Mark a transaction acknowledged after successfully receiving a response. This is helpful 
    * for later reporting. 
 				Session token obtained from SignOn()
@@ -2439,11 +2700,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Acknowledge $parameters
    * @return AcknowledgeResponse
    */
-	public function Acknowledge(Acknowledge $parameters) {
-		return $this->__soapCall ( 'Acknowledge', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function Acknowledge(Acknowledge $parameters) {
+    return $this->__soapCall('Acknowledge', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Provides the mechanism to request any transactions that match given tender data. 
 				The 
    * tender data tro match.
@@ -2456,11 +2721,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param RequestTransaction $parameters
    * @return RequestTransactionResponse
    */
-	public function RequestTransaction(RequestTransaction $parameters) {
-		return $this->__soapCall ( 'RequestTransaction', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function RequestTransaction(RequestTransaction $parameters) {
+    return $this->__soapCall('RequestTransaction', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Used to activate, reload, deactivate an account or to transfer the balance from another 
    * card. 
 				Session token obtained from SignOn()
@@ -2474,11 +2743,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param ManageAccount $parameters
    * @return ManageAccountResponse
    */
-	public function ManageAccount(ManageAccount $parameters) {
-		return $this->__soapCall ( 'ManageAccount', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ManageAccount(ManageAccount $parameters) {
+    return $this->__soapCall('ManageAccount', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Used to update an existing account. 
 				Session token obtained from SignOn()
 				Manage 
@@ -2490,11 +2763,15 @@ class CwsTransactionProcessing extends SoapClient {
    * @param ManageAccountById $parameters
    * @return ManageAccountByIdResponse
    */
-	public function ManageAccountById(ManageAccountById $parameters) {
-		return $this->__soapCall ( 'ManageAccountById', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
-	
-	/*
+  public function ManageAccountById(ManageAccountById $parameters) {
+    return $this->__soapCall('ManageAccountById', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
+
+  /*
    * Disburse is used to submit a disbursement request to the Service Provider who then electronically 
    * disburses funds from the Payers bank account to the Payee. 
 				Session token obtained 
@@ -2508,9 +2785,13 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Disburse $parameters
    * @return DisburseResponse
    */
-	public function Disburse(Disburse $parameters) {
-		return $this->__soapCall ( 'Disburse', array ($parameters ), array ('uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing', 'soapaction' => '' ) );
-	}
+  public function Disburse(Disburse $parameters) {
+    return $this->__soapCall('Disburse', array($parameters),       array(
+            'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
+            'soapaction' => ''
+           )
+      );
+  }
 
 }
 

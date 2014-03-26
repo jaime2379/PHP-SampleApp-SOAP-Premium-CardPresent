@@ -45,6 +45,18 @@ else{
 	$ServiceId = $config->appendChild(new DOMElement ( 'ServiceId', $_serviceId['singleService']['ServiceId'] ));
 	$ServiceId->setAttributeNode(new DOMAttr('serviceName', $_serviceId['singleService']['ServiceName']));
 }
+if (is_array($_workflowId))
+{
+	foreach ($_workflowId as $svcId)
+	{
+		$WorkflowId = $config->appendChild(new DOMElement ( 'WorkflowId', $svcId['WorkflowId'] ));
+		$WorkflowId->setAttributeNode(new DOMAttr('workflowName', $svcId['WorkflowName']));
+	}
+}
+else{
+	$WorkflowId = $config->appendChild(new DOMElement ( 'WorkflowId', $_workflowId['WorkflowId'] ));
+	$WorkflowId->setAttributeNode(new DOMAttr('workflowName', $_workflowId['WorkflowName']));
+}
 
 $ApplicationProfileId = $config->appendChild(new DOMElement ( 'ApplicationProfileId', $_applicationProfileId ));
 

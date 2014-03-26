@@ -76,8 +76,8 @@ class Settings
 	const TxnData_IncludeCFees = false;		// 'true', 'false'
 	const TxnData_SoftDescriptors = false;		// 'true', 'false'
 	// Support Tokenization
-	const TxnData_SupportTokenization = true; // 'true', 'false'
-	const TxnData_ProcessEncrypted = false;
+	const TxnData_SupportTokenization = false; // 'true', 'false'
+	const TxnData_ProcessEncrypted = true;
 
 	// Process as a BankcardTransaction object or as a BankcardTransactionPro object
 	const ProcessAsBankcardTransaction_Pro = false;		// 'true', 'false' If set to true the following Pro parameters are required

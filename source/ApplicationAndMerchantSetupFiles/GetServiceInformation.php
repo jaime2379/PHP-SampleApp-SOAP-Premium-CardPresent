@@ -26,7 +26,6 @@
  * the software company to properly integrate into thier solution code that best meets thier production needs.
  */
 
-
 /*
  * Retrieve Service Information
  */
@@ -57,13 +56,27 @@ if ($_serviceId == null)
 			foreach ( $response->BankcardServices->BankcardService as $BankcardService ) {
 				printServiceInformation ( $BankcardService );
 				$_serviceId[] = array('ServiceId' => $BankcardService->ServiceId, 'ServiceName' => $BankcardService->ServiceName);
-
 			}
 		}
 		else {
 			printServiceInformation ( $response->BankcardServices->BankcardService );
 			$_serviceId['singleService'] = array('ServiceId' => $response->BankcardServices->BankcardService->ServiceId, 'ServiceName' => $response->BankcardServices->BankcardService->ServiceName);
 
+		}
+		if (isset ( $response->Workflows->Workflow )) {
+			echo '<div style="text-align:center; border-width: thin; border-color: black; border-style:solid; "><h1>Service Information - Bankcard Workflows</h1></div>';
+			if (is_array ( $response->Workflows->Workflow )) {
+				foreach ( $response->Workflows->Workflow as $Workflow ) {
+					echo '<h2><b>WorkflowName:</b><font color="#800080"> ' . $Workflow->Name . '</font></h2>';
+					echo '<b>WorkflowId:</b><font color="#800080"> ' . $Workflow->WorkflowId . '<br /></font><br />';
+					$_workflowId [] = array ('WorkflowId' => $Workflow->WorkflowId, 'WorkflowName' => $Workflow->Name );
+				}
+			}
+			else {
+				echo '<h2><b>WorkflowName:</b><font color="#800080"> ' . $response->Workflows->Workflow->Name . '</font></h2>';
+				echo '<b>WorkflowId:</b><font color="#800080"> ' . $response->Workflows->Workflow->WorkflowId . '<br /></font><br />';
+				$_workflowId [] = array ('WorkflowId' => $response->Workflows->Workflow->WorkflowId, 'WorkflowName' => $response->Workflows->Workflow->Name );
+			}
 		}
 	}
 	if (isset($response->ElectronicCheckingServices->ElectronicCheckingService))
