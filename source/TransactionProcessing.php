@@ -56,7 +56,10 @@ $_msgFormat = Settings::MsgFormat;
 // This is main means of authentication to the platform, essentially this is your password.
 
 require_once ABSPATH.'/ConfigFiles/ReadConfigValues.php';
-
+	if (!Settings::ActivationKey == ''){
+		$_merchantProfileId[0]['ProfileId'] = Settings::ActivationKey;
+		$_merchantProfileId[1]['ProfileId'] = Settings::ActivationKey.'_TC';
+	}
 /*
  *
  * Create new web service client class using provided token

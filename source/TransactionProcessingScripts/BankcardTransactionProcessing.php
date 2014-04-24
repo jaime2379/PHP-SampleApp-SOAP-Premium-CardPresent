@@ -78,6 +78,12 @@ if (is_array($_merchantProfileId)){
 			case 'TestMerchant_4C85600001':
 				$client->workflowId = $_workflowId[1]['ServiceId'];
 				break;
+			case Settings::ActivationKey:
+				$client->workflowId = $_workflowId[0]['ServiceId'];
+				break;
+			case Settings::ActivationKey.'TC':
+				$client->workflowId = $_workflowId[1]['ServiceId'];
+				break;
 			}
 		}
 		if($_bcs->Operations->Authorize)

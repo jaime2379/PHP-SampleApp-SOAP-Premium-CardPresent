@@ -435,8 +435,7 @@ if (! class_exists ( "CVResult" )) {
 
 if (! class_exists ( "Undo" )) {
 
- *Undo
- */
+
 	class Undo {
 		public $sessionToken; // string
 		public $TransactionId; // string
@@ -2567,7 +2566,7 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Undo $parameters
    * @return UndoResponse
    */
-  public function Undo(Undo $parameters) {
+  public function Undo(BCPUndo $parameters) {
     return $this->__soapCall('Undo', array($parameters),       array(
             'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
             'soapaction' => ''
@@ -2587,7 +2586,7 @@ class CwsTransactionProcessing extends SoapClient {
    * @param Capture $parameters
    * @return CaptureResponse
    */
-  public function Capture(Capture $parameters) {
+  public function Capture(CaptureAuth $parameters) {
     return $this->__soapCall('Capture', array($parameters),       array(
             'uri' => 'http://schemas.evosnap.com/CWS/v2.0/TransactionProcessing',
             'soapaction' => ''
