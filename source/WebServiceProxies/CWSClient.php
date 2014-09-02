@@ -179,7 +179,7 @@ class CWSClient {
 				$serviceKey = '/' . $serviceKey;
 			$this->serviceInfo = new CWSServiceInformation ( dirname(__FILE__).'/WSDL/CwsServiceInformation.wsdl', array ('trace' => 1, 'exceptions' => 1, 'cache_wsdl' => WSDL_CACHE_NONE ) );
 			$this->bankCard = new CwsTransactionProcessing (  dirname(__FILE__).'/WSDL/CwsTransactionProcessing.wsdl', array ('trace' => 1, 'exceptions' => 1, 'cache_wsdl' => WSDL_CACHE_NONE ) );
-			$this->txnManagement = new CWSTransactionManagement (  dirname(__FILE__).'/WSDL/CwsTransactionManagement.wsdl', array ('trace' => 1, 'exceptions' => 1, 'cache_wsdl' => WSDL_CACHE_NONE ) );
+			$this->txnManagement = new CWSTransactionManagement (  dirname(__FILE__).'/WSDL/CWSTransactionManagement.wsdl', array ('trace' => 1, 'exceptions' => 1, 'cache_wsdl' => WSDL_CACHE_NONE ) );
 			
 			$this->serviceInfo->__setLocation(Settings::BaseSvcEndpointPrimary);
 			$this->bankCard->__setLocation(Settings::BaseTxnEndpointPrimary);
@@ -460,18 +460,18 @@ class CWSClient {
 	 * $amount and $tip_amount: ('#.##'} (At least $1, two decimals required (1.00))
 	 *
 	 */
-	public function authorize($credit_info, $trans_info, $processAsPro = false) {
+	public function authorize($credit_info, $trans_info, $processAsPro = false, $processIntAvs = false) {
 		if (! $this->signOn ())
 		return false;
 
 		if ($this->svc instanceof BankcardService || $this->svc == null){  
 			// Bank transactionPro
 			if ($processAsPro == true)
-			$trans = buildTransactionPro ( $credit_info, $trans_info );
+			$trans = buildTransactionPro ( $credit_info, $trans_info, $processIntAvs );
 
 			// Bank Transaction
 			else
-			$trans = buildTransaction ( $credit_info, $trans_info );
+			$trans = buildTransaction ( $credit_info, $trans_info, $processIntAvs );
 		}
 		if ($this->svc instanceof ElectronicCheckingService){
 			$trans = buildACHTransaction($credit_info, $trans_info);
@@ -564,17 +564,17 @@ class CWSClient {
 	 * $amount and $tip_amount: ('#.##'} (At least $1, two decimals required (1.00))
 	 *
 	 */
-	public function authorizeAndCapture($credit_info, $trans_info, $processAsPro) {
+	public function authorizeAndCapture($credit_info, $trans_info, $processAsPro, $processIntAvs) {
 		if (! $this->signOn ())
 		return false;
 
 		// Build BankcardTransactionPro transaction if interchange data is present
 		if ($processAsPro == true) // Bank transaction
-		$bank_trans = buildTransactionPro ( $credit_info, $trans_info );
+		$bank_trans = buildTransactionPro ( $credit_info, $trans_info, $processIntAvs );
 
 		// Build Bankcard transaction
 		else
-		$bank_trans = buildTransaction ( $credit_info, $trans_info );
+		$bank_trans = buildTransaction ( $credit_info, $trans_info, $processIntAvs );
 
 		// Build AuthorizeAndCapture
 		$auth = new AuthorizeAndCapture ();
@@ -607,15 +607,17 @@ class CWSClient {
 	 * $transactionID is the known transaction ID of a previous transaction
 	 *
 	 */
-	public function undo($transactionID, $creds = null, $txnType = null) {
+	public function undo($transactionID, $diffData, $creds = null, $txnType = null) {
 		if (! $this->signOn ())
 		return false;
 
 		if ($this->svc instanceof BankcardService || $txnType == "BCP"){
 			$differenceData = new BankcardUndo();
+			$differenceData = $diffData;
 		}
 		if ($this->svc instanceof ElectronicCheckingService || $txnType == "ECK"){
-			$differenceData = new UndoDifferenceData();
+			$differenceData = new Undo();
+			$differenceData = $diffData;
 		}
 		$differenceData->TransactionId = $transactionID;
 		if ($creds != null) {
@@ -711,7 +713,7 @@ class CWSClient {
 		return false;
 
 		// Bank transaction
-		$bank_trans = buildTransaction ( $credit_info, $trans_info );
+		$bank_trans = buildTransactionPro ( $credit_info, $trans_info, false );
 
 		// Build Return Unlinked
 		//
@@ -847,7 +849,7 @@ class CWSClient {
 
 		if ($creds != null) {
 			$diffDataArray = array ();			
-			$caDiffData = new CaptureDifferenceData ();
+			$caDiffData = new Capture ();
 			$caDiffData->TransactionId = '-1';
 			$diffDataArray [] = $caDiffData;
 			$diffDataArray [0]->Addendum = new Addendum ();

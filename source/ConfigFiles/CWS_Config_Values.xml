@@ -8,6 +8,16 @@
   <WorkflowId workflowName="Magensa TEST - EVO TPS BCP Host Capture SBX">A121700011</WorkflowId>
   <WorkflowId workflowName="Magensa TEST - EVO TPS BCP Terminal Capture SBX">A1F1A00011</WorkflowId>
   <ApplicationProfileId>7059</ApplicationProfileId>
+  <MerchantProfileId serviceId="39C6700001">EVO_SOAP_Retail_HostCap_Magensa</MerchantProfileId>
+  <MerchantProfileId serviceId="4C85600001">EVO_SOAP_Retail_TermCap_Cert</MerchantProfileId>
+  <MerchantProfileId serviceId="39C6700001">evosnap</MerchantProfileId>
+  <MerchantProfileId serviceId="4C85600001">evosnap_TC</MerchantProfileId>
+  <MerchantProfileId serviceId="39C6700001">MarkMerchant01</MerchantProfileId>
+  <MerchantProfileId serviceId="4C85600001">MarkMerchant02</MerchantProfileId>
+  <MerchantProfileId serviceId="39C6700001">SNAPWORDS</MerchantProfileId>
+  <MerchantProfileId serviceId="4C85600001">SNAPWORDS_TC</MerchantProfileId>
+  <MerchantProfileId serviceId="39C6700001">techcrunch2014</MerchantProfileId>
+  <MerchantProfileId serviceId="4C85600001">techcrunch2014_TC</MerchantProfileId>
   <MerchantProfileId serviceId="39C6700001">TestMerchant_39C6700001</MerchantProfileId>
   <MerchantProfileId serviceId="4C85600001">TestMerchant_4C85600001</MerchantProfileId>
 </config>

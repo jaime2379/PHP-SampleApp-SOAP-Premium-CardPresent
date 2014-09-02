@@ -44,7 +44,7 @@ class Settings
 	// Application Data Values 
 	const ApplicationName = 'My Test App';
 	const SoftwareVersion = 'v1.0';
-	const SoftwareVersionDate = '2013-12-02';
+	const SoftwareVersionDate = '2014-06-25';
 	const DeviceSerialNumber = '1264682310';
 	const ApplicationAttended = true;		// Valid Values 'true', 'false' 
 	const ApplicationLocation = 'OnPremises';		// Valid Values 'Unknown', 'OnPremises', 'OffPremises', 'HomeInternet' 
@@ -76,12 +76,15 @@ class Settings
 	const TxnData_IncludeUCAF = false;		// 'true', 'false' 
 	const TxnData_IncludeCFees = false;		// 'true', 'false'
 	const TxnData_SoftDescriptors = false;		// 'true', 'false'
+	const TxnData_BillingShipping = false;
 	// Support Tokenization
 	const TxnData_SupportTokenization = false; // 'true', 'false'
 	const TxnData_ProcessEncrypted = true;
-
+	// Process as a BankcardTransaction object or as an International AVS transaction
+	const ProcessInternationalTxn = true;	
+	
 	// Process as a BankcardTransaction object or as a BankcardTransactionPro object
-	const ProcessAsBankcardTransaction_Pro = false;		// 'true', 'false' If set to true the following Pro parameters are required
+	const ProcessAsBankcardTransaction_Pro = true;		// 'true', 'false' If set to true the following Pro parameters are required
 	// THE FOLLOWING WAS 'true' NOT LEVEL1 IN HTTP
 	const Pro_PurchaseCardLevel = Level1;		// 'Level1', 'Level2', 'Level3' 
 	const Pro_InterchangeData = false;		// 'true', 'false'
@@ -93,13 +96,13 @@ class Settings
 	const TxnData_ServiceType = 'ACH';   //Indicates the Electronic Checking service type: ACH, RDC or ECK. Required.
 	
 	// Endpoint Management
-	const BaseSvcEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.19/SvcInfo';
-	const BaseSvcEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.19/SvcInfo';
-	const BaseTxnEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.19/Txn';
-	const BaseTxnEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.19/Txn';
-	const BaseDataServicesEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.19/DataServices/TMS';
-	const BaseDataServicesEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.19/DataServices/TMS';
-	const URL_BaseURL = 'https://api.cipcert.goevo.com/2.0.19/';
-	const URL_RestURL = 'https://api.cipcert.goevo.com/REST/2.0.19/';
+	const BaseSvcEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.20/SvcInfo';
+	const BaseSvcEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.20/SvcInfo';
+	const BaseTxnEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.20/Txn';
+	const BaseTxnEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.20/Txn';
+	const BaseDataServicesEndpointPrimary = 'https://api.cipcert.goevo.com/2.0.20/DataServices/TMS';
+	const BaseDataServicesEndpointSecondary = 'https://api.cipcert.goevo.com/2.0.20/DataServices/TMS';
+	const URL_BaseURL = 'https://api.cipcert.goevo.com/2.0.20/';
+	const URL_RestURL = 'https://api.cipcert.goevo.com/REST/2.0.20/';
 }
 ?>

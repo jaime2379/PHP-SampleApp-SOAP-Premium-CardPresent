@@ -71,28 +71,20 @@ if (is_array($_merchantProfileId)){
 		 *
 		 */
 		if ($bcpTxn->TndrData->securePaymentAccountData != ''){
-			switch ($client->merchantProfileID)	{
-			case 'TestMerchant_39C6700001':
-				$client->workflowId = $_workflowId[0]['ServiceId'];
-				break;
-			case 'TestMerchant_4C85600001':
-				$client->workflowId = $_workflowId[1]['ServiceId'];
-				break;
-			case Settings::ActivationKey:
-				$client->workflowId = $_workflowId[0]['ServiceId'];
-				break;
-			case Settings::ActivationKey.'TC':
-				$client->workflowId = $_workflowId[1]['ServiceId'];
-				break;
+			if ($client->workflowId == '39C6700001') {
+				$client->workflowId = 'A121700001';
+			}
+			elseif ($client->workflowId == '4C85600001') {
+				$client->workflowId = 'A1F1A00001';
 			}
 		}
 		if($_bcs->Operations->Authorize)
 		{
-			$response = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
+			$response = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro, Settings::ProcessInternationalTxn);
 			printTransactionResults($response, 'Authorize', $merchProfileId);
 		}
 
-		if($_bcs->Operations->Authorize && Settings::TxnData_SupportTokenization && $response->PaymentAccountDataToken != '')
+		/*if($_bcs->Operations->Authorize && Settings::TxnData_SupportTokenization && $response->PaymentAccountDataToken != '')
 		{
 			$tokenTransaction = new newTransaction();
 			$tokenTransaction->TxnData = $bcpTxn->TxnData;
@@ -107,10 +99,10 @@ if (is_array($_merchantProfileId)){
 			$tokenizedTenderData->zip = '10101';
 			$tokenTransaction->TndrData = $tokenizedTenderData;
 			$bcpTxn->TxnData->EntryMode = 'Keyed';
-			$response = $client->authorize($tokenTransaction->TndrData, $tokenTransaction->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
+			$response = $client->authorize($tokenTransaction->TndrData, $tokenTransaction->TxnData, Settings::ProcessAsBankcardTransaction_Pro, , Settings::ProcessInternationalTxn);
 			printTransactionResults($response, 'Authorize using PaymentAccountDataToken', $merchProfileId);
 			$bcpTxn = setBCPTxnData($_serviceInformation);
-		}
+		}*/
 
 		/*
 		 *
@@ -125,7 +117,7 @@ if (is_array($_merchantProfileId)){
 
 		if($_bcs->Operations->CaptureSelective)
 		{
-			$response = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
+			$response = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro,  Settings::ProcessInternationalTxn);
 			printTransactionResults($response, 'Authorize For CaptureSelective', $merchProfileId);
 			$txnIdCs [0] = $response->TransactionId;
 			$response2 = $client->captureSelective($txnIdCs, null, null);
@@ -146,9 +138,13 @@ if (is_array($_merchantProfileId)){
 		if($_bcs->Operations->Undo)
 		{
 			// First send an Authorize to Void
-			$response3 = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
+			$response3 = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro,  Settings::ProcessInternationalTxn);
 			// Now send the Void using TransactionId from above transaction response
-			$response4 = $client->undo($response3->TransactionId, null, "BCP");
+			$undDiffData = new BankcardUndo ();
+			$undDiffData->PINDebitReason = 'NotSet';
+			$undDiffData->TransactionCode = 'NotSet';
+			$undDiffData->ForceVoid = false;
+			$response4 = $client->undo($response3->TransactionId, $undDiffData, null, "BCP");
 			printTransactionResults($response4, 'Undo', $merchProfileId);
 		}
 
@@ -159,7 +155,7 @@ if (is_array($_merchantProfileId)){
 		 */
 		if($_bcs->Operations->AuthAndCapture && $_bcs->AutoBatch)
 		{
-			$response5 = $client->authorizeAndCapture($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
+			$response5 = $client->authorizeAndCapture($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro,  Settings::ProcessInternationalTxn);
 			printTransactionResults($response5, 'AuthorizeAndCapture', $merchProfileId);
 		}
 
@@ -179,8 +175,8 @@ if (is_array($_merchantProfileId)){
 		if($_bcs->Operations->ReturnById && !$_bcs->AutoBatch)
 		{
 			// First send an Authorize to Capture
-			$response3 = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro);
-			
+			$response3 = $client->authorize($bcpTxn->TndrData, $bcpTxn->TxnData, Settings::ProcessAsBankcardTransaction_Pro, Settings::ProcessInternationalTxn);
+			printTransactionResults($response3, 'Authorize For CaptureSelective', $merchProfileId);
 			$txnIds [0] = $response3->TransactionId;
 			// Now send the Void using TransactionId from above transaction response
 			if($_bcs->Operations->CaptureSelective){

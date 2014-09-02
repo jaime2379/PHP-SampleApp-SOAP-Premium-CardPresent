@@ -78,7 +78,7 @@ require_once ABSPATH.'/WebServiceProxies/CWSClient.php';
 if (!Settings::UseWorkflow)
 	$client = new CWSClient($_identityToken, $_serviceKey, $_merchantProfileId[0]['ProfileId'], $_merchantProfileId[0]['ServiceId'], $_applicationProfileId);
 else
-	$client = new CWSClient($_identityToken, $_serviceKey, $_merchantProfileId[0]['ProfileId'], $_workflowid[0]['Serviceid'], $_applicationProfileId);
+	$client = new CWSClient($_identityToken, $_serviceKey, $_merchantProfileId[0]['ProfileId'], $_workflowId[0]['ServiceId'], $_applicationProfileId);
 $_serviceInformation = $client->getServiceInformation();
 
 if (isset($_serviceInformation->BankcardServices)){
@@ -91,10 +91,10 @@ if (isset($_serviceInformation->ElectronicCheckingServices->ElectronicCheckingSe
 	require_once ABSPATH.'/TransactionProcessingScripts/ElectronicCheckingTransactionProcessing.php';
 }
 
-if (isset($_serviceInformation->StoredValueServices->StoredValueService)){
-	$_storedvalueServices = $_serviceInformation->StoredValueServices;
-	require_once ABSPATH.'/TransactionProcessingScripts/StoredValueTransactionProcessing.php';
-}
+//if (isset($_serviceInformation->StoredValueServices->StoredValueService)){
+	//$_storedvalueServices = $_serviceInformation->StoredValueServices;
+	//require_once ABSPATH.'/TransactionProcessingScripts/StoredValueTransactionProcessing.php';
+//}
 
 echo '<br><b>     Transaction Processing script complete!</b><br />';
 ?>
