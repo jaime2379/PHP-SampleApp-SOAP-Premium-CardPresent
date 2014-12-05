@@ -145,7 +145,21 @@ class altMerchantData{
 class interchangeData {
 	public $BillPayment = '', $RequestCommercialCard = '', $ExistingDebt = '', $RequestACI = '', $TotalNumberOfInstallments = '', $CurrentInstallmentNumber = '', $RequestAdvice = '';
 }
-
+class level2Data {
+	public $BaseAmount = '', $CommodityCode = '', $CompanyName = '', $CustomerCode = '', $Description = '', $DestinationPostalCode = '', $DiscountAmount = '', $DestinationCountryCode = '', $DutyAmount = '', $FreightAmount = '', $MiscHandlingAmount = '', $OrderDate = '', $OrderNumber = '', $RequesterName = '', $ShipFromPostalCode = '', $ShipmentId = '', $Tax = '', $TaxExempt = '';
+}
+class Tax {
+	public $Amount = 'null', $Rate = 'null', $InvoiceNumber = 'null';
+}
+class ItemizedTax  {
+	public $Amount = 'null', $Rate = 'null', $Type = 'null';
+}
+class ItemizedTaxes {
+	public $ItemizedTax = 'null';
+}
+class lineItemDetail {
+	public $DiscountAmount = '', $ProductCode = '', $Tax = '', $UnitPrice = '', $Quantity = '', $Description = '', $Amount = '', $UnitOfMeasure = '', $CommodityCode = '', $DiscountAmount = '', $DiscountIncluded = '', $TaxIncluded = '', $UPC = '';
+}
 // processes soap error.  Ideally create a class to handle all CWS SOAP faults.  Please see the FaultHandler.php class
 function process_soap_error($error) {
 	foreach ( $error as $key => $value ) {

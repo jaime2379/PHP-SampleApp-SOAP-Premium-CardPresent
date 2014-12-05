@@ -88,7 +88,7 @@ class Settings
 	// THE FOLLOWING WAS 'true' NOT LEVEL1 IN HTTP
 	const Pro_PurchaseCardLevel = Level1;		// 'Level1', 'Level2', 'Level3' 
 	const Pro_InterchangeData = false;		// 'true', 'false'
-	const Pro_IncludeLevel2OrLevel3Data = false;		// 'true', 'false'
+	const Pro_IncludeLevel2OrLevel3Data = true;		// 'true', 'false'
 	const Pro_IncludeAlternativeMerchantData = 'false';		// 'true', 'false'
 	
 	/// ACH Transaction Data Values
