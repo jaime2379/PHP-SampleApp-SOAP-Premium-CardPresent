@@ -123,6 +123,38 @@ function setBCPTxnData($_serviceInformation) {
 		// $tenderData->track2 = '4111111111111111=15121010454541500010';
 	}
 	
+if (Settings:: EMVData_ChangeMe)  {
+		$EMVData->ApplicationId = 'testitem'; // Tag 9F06 AID
+		$EMVData->ApplicationVersionNumber = 'testitem'; // Tag 9F09
+		$EMVData->AuthorizationAmount = 'testitem'; // Tag 9F02
+		$EMVData->ApplicationInterchangeProfile = 'testitem'; // Tag 82
+		$EMVData->ApplicationTransactionCount = 'testitem'; // Tag 9F36 ATC
+		$EMVData->ApplicationUsageControl = 'testitem'; // Tag 9F07
+		$EMVData->AuthorizationResponseCode = 'testitem'; // Tag 8A
+		$EMVData->CardAuthenticationReliabilityIndex = 'testitem'; 
+		$EMVData->CardAuthenticationResultsCode = 'testitem';
+		$EMVData->ChipConditionCode = 'testitem';
+		$EMVData->Cryptogram = 'testitem'; // Tag 9F26
+		$EMVData->CryptogramInformationData = 'testitem'; // Tag 9F27
+		$EMVData->CVMList = 'testitem'; // Tag 8E
+		$EMVData->CVMResults = 'testitem'; // Tag 9F34
+		$EMVData->InterfaceDeviceSerialNumber = 'testitem'; // Tag 9F1E IFD
+		$EMVData->CashBackAmount = 'testitem'; // Tag 9F03
+		$EMVData->IssuerActionDefault = 'testitem'; // Tag 9F0D
+		$EMVData->IssuerActionDenial = 'testitem'; // Tag 9F0E
+		$EMVData->IssuerActionOnline = 'testitem'; // Tag 9F0F
+		$EMVData->IssuerApplicationData = 'testitem'; // Tag 9F10
+		$EMVData->IssuerScriptResults = 'testitem'; 
+		$EMVData->LocalTransactionDate = 'testitem'; // Tag 9A
+		$EMVData->TerminalCountryCode = 'testitem'; // Tag 9F1A
+		$EMVData->TerminalType = 'testitem'; // Tag 9F35
+		$EMVData->TerminalVerifyResult = 'testitem'; // Tag 95
+		$EMVData->TransactionCategoryCode = 'testitem'; 
+		$EMVData->CurrencyCode = 'testitem'; // Tag 5F2A
+		$EMVData->SequenceNumber = 'testitem'; // Tag 9F41
+		$EMVData->TransactionType = 'testitem'; // Tag 9C
+		$EMVData->UnpredictableNumber = 'testitem'; // Tag 9F37
+	}
 	// Transaction information
 	/* SEE TRANSACTION INFORMATION CLASS IN CWSClient.php FOR MORE INFO */
 	$transactionData = new transData ();
